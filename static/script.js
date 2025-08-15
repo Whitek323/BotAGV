@@ -80,10 +80,9 @@ micBtn?.addEventListener('click', async () => {
 async function sendToAI(sentence) {
   const s = (sentence || '').trim();
   if (!s) return;
-  textResponse.textContent = '...';
+   textResponse.textContent = '...';
   audioContainer.innerHTML = '';
-
-  try {
+    try {
     const res = await fetch(ENDPOINT + '/ai', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -91,7 +90,7 @@ async function sendToAI(sentence) {
     });
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
-    const { response: answer } = await res.json();
+    const { response: answer} = await res.json();
     textResponse.textContent = answer || '';
 
     if (voiceToggle?.checked && answer) {
@@ -99,8 +98,11 @@ async function sendToAI(sentence) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ answer })
-      });
-      if (!ttsRes.ok) throw new Error(`TTS ${ttsRes.status} ${ttsRes.statusText}`);
+      }
+      
+      );
+
+       if (!ttsRes.ok) throw new Error(`TTS ${ttsRes.status} ${ttsRes.statusText}`);
 
       const { audio_url } = await ttsRes.json();
       const src = (audio_url || '/static/response.mp3') + `?t=${Date.now()}`; // กัน cache
@@ -108,10 +110,12 @@ async function sendToAI(sentence) {
       audio.controls = true;
       audio.src = src;
       audioContainer.appendChild(audio);
-      // auto-play (ถ้าต้องการ): audio.play().catch(()=>{});
+      audio.play().catch(()=>{});
     }
   } catch (err) {
     textResponse.textContent = String(err);
   }
 }
+
+
 

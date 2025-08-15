@@ -11,11 +11,12 @@ from bot_utils import BotUtils
 from gtts import gTTS
 import io
 from pydub import AudioSegment
+import sounddevice as sd
 import speech_recognition as sr
 
-
 app = Flask(__name__)
-app.config['JSON_AS_ASCII'] = False 
+app.config['JSON_AS_ASCII'] = False
+
 # === Configuration replacement ===
 APP_PATHS = {
     "DATA_INTENT": "data/intents/intents.json",
@@ -88,7 +89,8 @@ def aiPost():
 def speak_answer():
     json_content = request.json
     answer = json_content.get("answer")
-    
+    #res_id = json_content.get("res_id")
+
     cleaned_answer = BotUtils.clean_text(answer)
     # สร้างไฟล์เสียงใหม่หรือเขียนทับไฟล์เสียงเดิม
     tts = gTTS(text=cleaned_answer, lang='th')
