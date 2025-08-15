@@ -7,6 +7,7 @@ const textResponse = $('textResponse');
 const voiceToggle = $('voiceToggle');
 const micBtn = $('micBtn');
 
+// ensure audioContainer exists
 let audioContainer = $('audioContainer');
 if (!audioContainer) {
   audioContainer = document.createElement('div');
@@ -20,7 +21,6 @@ mainForm?.addEventListener('submit', async (e) => {
 });
 
 micBtn?.addEventListener('click', async () => {
-  // lock UI
   const original = micBtn.textContent;
   micBtn.disabled = true;
   micBtn.textContent = '...';
@@ -41,19 +41,16 @@ micBtn?.addEventListener('click', async () => {
     const stopped = new Promise((resolve) => (recorder.onstop = resolve));
     recorder.start();
 
-    // อัด 4 วินาที
-    setTimeout(() => {
-      if (recorder.state === 'recording') recorder.stop();
-    }, 4000);
-
+    // record 4s
+    setTimeout(() => { if (recorder.state === 'recording') recorder.stop(); }, 4000);
     await stopped;
     stream.getTracks().forEach((t) => t.stop());
 
-    // รวมไฟล์เสียง
+    // build file
     const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
     const file = new File([blob], 'speech.webm', { type: blob.type });
 
-    // ส่งไป /stt
+    // send to /stt
     const fd = new FormData();
     fd.append('audio', file);
     fd.append('language', 'th-TH');
@@ -66,8 +63,8 @@ micBtn?.addEventListener('click', async () => {
     if (!text) {
       textResponse.textContent = sttJson?.error ? `ไม่เข้าใจเสียง: ${sttJson.error}` : 'ไม่พบคำพูด';
     } else {
-      textInput.value = text;       // โชว์ข้อความที่ถอดเสียงได้
-      await sendToAI(text);         // ยิงต่อไป /ai
+      textInput.value = text;
+      await sendToAI(text);
     }
   } catch (err) {
     textResponse.textContent = String(err);
@@ -80,9 +77,10 @@ micBtn?.addEventListener('click', async () => {
 async function sendToAI(sentence) {
   const s = (sentence || '').trim();
   if (!s) return;
-   textResponse.textContent = '...';
+  textResponse.textContent = '...';
   audioContainer.innerHTML = '';
-    try {
+
+  try {
     const res = await fetch(ENDPOINT + '/ai', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -90,32 +88,47 @@ async function sendToAI(sentence) {
     });
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 
-    const { response: answer} = await res.json();
+    const { response: answer, res_id } = await res.json();
     textResponse.textContent = answer || '';
 
-    if (voiceToggle?.checked && answer) {
-      const ttsRes = await fetch(ENDPOINT + '/speak_answer', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ answer })
-      }
-      
-      );
-
-       if (!ttsRes.ok) throw new Error(`TTS ${ttsRes.status} ${ttsRes.statusText}`);
-
-      const { audio_url } = await ttsRes.json();
-      const src = (audio_url || '/static/response.mp3') + `?t=${Date.now()}`; // กัน cache
-      const audio = document.createElement('audio');
-      audio.controls = true;
-      audio.src = src;
-      audioContainer.appendChild(audio);
-      audio.play().catch(()=>{});
+    if (voiceToggle?.checked) {
+      playIntentAudio(res_id);
     }
   } catch (err) {
     textResponse.textContent = String(err);
   }
 }
 
+function playIntentAudio(resId) {
+  audioContainer.innerHTML = '';
+  const audio = document.createElement('audio');
+  audio.controls = true;
 
+  const fallback = ENDPOINT + '/static/sound/sys/unknown1.wav';
+  let primary;
 
+  // ใช้ fallback ทันทีถ้า resId ไม่ถูกต้อง
+  if (resId === -1 || resId === '-1' || resId === null || resId === undefined || resId === '') {
+    primary = null;
+  } else {
+    primary = ENDPOINT + `/static/sound/intent/${resId}.wav`;
+  }
+
+  // ใส่ cache-busting
+  const bust = () => `?t=${Date.now()}`;
+
+  audio.onerror = () => {
+    // ถ้าเสียง intent โหลดไม่ได้ ให้สลับไปเสียง unknown
+    if (audio.src.includes('/sound/intent/')) {
+      audio.onerror = null; // ป้องกันลูป
+      audio.src = fallback + bust();
+      audio.play().catch(() => {});
+    }
+  };
+
+  audio.src = (primary || fallback) + bust();
+  audioContainer.appendChild(audio);
+
+  // ลองเล่นเลย (บางเบราว์เซอร์ต้องการ interaction มาก่อน ซึ่งเรามีจากการกดปุ่มแล้ว)
+  audio.play().catch(() => {});
+}

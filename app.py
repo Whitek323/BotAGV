@@ -79,11 +79,12 @@ def aiPost():
     if not sentence:
         return jsonify({"error": "missing 'sentence'"}), 400
     tag, prob = BotUtils.predict_intent(model, sentence, all_words, tags)
+    
     if prob >= 0.95:
         response, res_id = BotUtils.get_response(tag, intents)
-        return {"response": response}
+        return jsonify({"response": response, "res_id": int(res_id)})
     else:
-        return {"response":"ขออภัย ฉันยังไม่เข้าใจคำถามนี้"}
+        return jsonify({"response": "ขออภัย ฉันยังไม่เข้าใจคำถามนี้", "res_id": -1})
 
 @app.route("/speak_answer", methods=["POST"])
 def speak_answer():
