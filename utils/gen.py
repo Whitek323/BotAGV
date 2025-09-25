@@ -1,4 +1,4 @@
-
+#สร้าง
 import asyncio
 import math
 import random
@@ -9,7 +9,7 @@ from cute_voice import CuteVoice
 import os
 processor = CuteVoice(output_path="./output.wav")
 
-async def generate_and_play(text: str = None, act: int = None, path: str = None):
+async def generate_and_play(text: str = None,filename:str = None, act: int = None, path: str = None):
     global ser
     try:
         if path and os.path.exists(path):
@@ -19,7 +19,7 @@ async def generate_and_play(text: str = None, act: int = None, path: str = None)
             print(f"[Generate] Using EdgeTTS for: {text}")
             communicate = edge_tts.Communicate(text, voice="th-TH-PremwadeeNeural", rate="-30%", pitch="+10Hz")
             input_audio_path = f"./output/tmp_output.wav"
-            output_audio_path = f"./output/output.wav"
+            output_audio_path = f"./output/{filename}.wav"
             await communicate.save(input_audio_path)
 
             print("Audio file saved.")
