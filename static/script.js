@@ -7,7 +7,6 @@ const textResponse = $('textResponse');
 const voiceToggle = $('voiceToggle');
 const micBtn = $('micBtn');
 
-// ensure audioContainer exists
 let audioContainer = $('audioContainer');
 if (!audioContainer) {
   audioContainer = document.createElement('div');
@@ -41,16 +40,13 @@ micBtn?.addEventListener('click', async () => {
     const stopped = new Promise((resolve) => (recorder.onstop = resolve));
     recorder.start();
 
-    // record 4s
     setTimeout(() => { if (recorder.state === 'recording') recorder.stop(); }, 4000);
     await stopped;
     stream.getTracks().forEach((t) => t.stop());
 
-    // build file
     const blob = new Blob(chunks, { type: recorder.mimeType || 'audio/webm' });
     const file = new File([blob], 'speech.webm', { type: blob.type });
 
-    // send to /stt
     const fd = new FormData();
     fd.append('audio', file);
     fd.append('language', 'th-TH');
@@ -107,7 +103,7 @@ function playIntentAudio(resId) {
   const fallback = ENDPOINT + '/static/sound/sys/unknown1.wav';
   let primary;
 
-  // ใช้ fallback ทันทีถ้า resId ไม่ถูกต้อง
+
   if (resId === -1 || resId === '-1' || resId === null || resId === undefined || resId === '') {
     primary = null;
   } else {
@@ -120,7 +116,7 @@ function playIntentAudio(resId) {
   audio.onerror = () => {
     // ถ้าเสียง intent โหลดไม่ได้ ให้สลับไปเสียง unknown
     if (audio.src.includes('/sound/intent/')) {
-      audio.onerror = null; // ป้องกันลูป
+      audio.onerror = null; 
       audio.src = fallback + bust();
       audio.play().catch(() => {});
     }
@@ -129,6 +125,5 @@ function playIntentAudio(resId) {
   audio.src = (primary || fallback) + bust();
   audioContainer.appendChild(audio);
 
-  // ลองเล่นเลย (บางเบราว์เซอร์ต้องการ interaction มาก่อน ซึ่งเรามีจากการกดปุ่มแล้ว)
   audio.play().catch(() => {});
 }

@@ -8,7 +8,6 @@ from pythainlp import word_tokenize
 from flask import Flask,request,render_template,jsonify
 from neural_net import NeuralNet
 from bot_utils import BotUtils
-from gtts import gTTS
 import io
 from pydub import AudioSegment
 import sounddevice as sd
