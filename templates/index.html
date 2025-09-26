@@ -4,17 +4,40 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>ChatBot</title>
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 	</head>
 	<body>
-	    <h1>Welcome chatbot deeplearn</h1>
-	    <form id="mainForm">
-  <input id="textInput" placeholder="สวัสดี" value="สวัสดี">
-  <label><input type="checkbox" id="voiceToggle"> ตอบด้วยเสียง</label>
-  <button>Submit</button>
-  <button type="button" id="micBtn" aria-label="Record with mic">mic</button>
+		<div style="height:300px"></div>
+		<div class="content-center flex justify-center w-full">
+<form id="mainForm" >
+  <input class="shadow appearance-none border rounded-lg w-3xl py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline" id="textInput" placeholder="สวัสดี" value="สวัสดี">
+ 	<div class="flex justify-between mt-2"> 
+		<label>
+			<div id="checkAria" class="py-3">
+				<input class="w-4 h-4 text-blue-600 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+				type="checkbox" id="voiceToggle" checked> 
+				<p class="inline bg-amber-950 text-white rounded px-2">ตอบด้วยเสียง</p>
+			</div>
+		</label>
+		<div class="">
+			<!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button> -->
+			<button type="submit" class="p-0 border-0 bg-transparent">
+				<img src="{{ url_for('static', filename='../static/send.png') }}" alt="Submit" class="w-8 h-8">
+			</button>
+			<button class="p-0 border-0 bg-transparent" type="button" id="micBtn" aria-label="Record with mic">
+				<img src="{{ url_for('static', filename='../static/microphone.png') }}" alt="Submit" class="w-8 h-8">
+			</button>
+		</div>
+	</div>
+<div class="flex flex-col items-center justify-center">
+  <p id="textResponse" style="min-height:40px" class="shadow appearance-none border rounded-lg w-3xl py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline"></p>
+  <div style="display:none" id="audioContainer"></div>
+</div>
+
 </form>
-<p id="textResponse"></p>
-<div id="audioContainer"></div>
+
+</div>
 <script src="{{ url_for('static', filename='script.js') }}" defer></script>	
-	</body>
+</body>
 </html>

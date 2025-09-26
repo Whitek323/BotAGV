@@ -1,4 +1,4 @@
-const ENDPOINT = 'http://localhost:5000';
+const ENDPOINT = 'http://127.0.0.1:7001';
 
 const $ = (id) => document.getElementById(id);
 const mainForm = $('mainForm');
@@ -6,6 +6,7 @@ const textInput = $('textInput');
 const textResponse = $('textResponse');
 const voiceToggle = $('voiceToggle');
 const micBtn = $('micBtn');
+const body = document.body;
 
 let audioContainer = $('audioContainer');
 if (!audioContainer) {
@@ -23,6 +24,7 @@ micBtn?.addEventListener('click', async () => {
   const original = micBtn.textContent;
   micBtn.disabled = true;
   micBtn.textContent = '...';
+  body.style.backgroundImage = 'url("static/bg2.png")';
   textResponse.textContent = '';
   audioContainer.innerHTML = '';
 
@@ -65,6 +67,7 @@ micBtn?.addEventListener('click', async () => {
   } catch (err) {
     textResponse.textContent = String(err);
   } finally {
+    body.style.backgroundImage = 'url("static/bg1.png")';
     micBtn.textContent = original;
     micBtn.disabled = false;
   }
@@ -74,6 +77,7 @@ async function sendToAI(sentence) {
   const s = (sentence || '').trim();
   if (!s) return;
   textResponse.textContent = '...';
+  body.style.backgroundImage = 'url(""static/bg2.png")';
   audioContainer.innerHTML = '';
 
   try {

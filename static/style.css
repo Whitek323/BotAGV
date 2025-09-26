@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+body {
+    background-image: url("bg1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+background-position: center;
+}
+#mainForm{
+    margin-top: 200px;
+}
+#textInput,#textResponse{
+    background-color: rgb(98, 98, 98);   
+}
+#checkArea{
+    display: flex;
+}

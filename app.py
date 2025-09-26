@@ -1,20 +1,13 @@
-import torch
-import torch.nn as nn
-import random
-import json
-import re
-import numpy as np
-from pythainlp import word_tokenize
+import csv
 from flask import Flask,request,render_template,jsonify
-from neural_net import NeuralNet
 from bot_utils import BotUtils
 import io
 from pydub import AudioSegment
-import sounddevice as sd
 import speech_recognition as sr
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
+app.config['TEMPLATES_AUTO_RELOAD'] = True,
 
 # === Configuration replacement ===
 APP_PATHS = {
@@ -63,8 +56,6 @@ def stt():
             audio = r.record(source)
         text = r.recognize_google(audio, language=language)  # ต้องต่อเน็ต
         return jsonify({"text": text})
-    except sr.UnknownValueError:
-        return jsonify({"text": "", "error": "unrecognized"}), 422
     except sr.RequestError as e:
         return jsonify({"text": "", "error": f"service_error: {e}"}), 503
     except Exception as e:
@@ -83,27 +74,35 @@ def aiPost():
         response, res_id = BotUtils.get_response(tag, intents)
         return jsonify({"response": response, "res_id": int(res_id)})
     else:
+        with open("logs/unknown_questions.csv", "a", newline='', encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(sentence)
         return jsonify({"response": "ขออภัย ฉันยังไม่เข้าใจคำถามนี้", "res_id": -1})
-
-@app.route("/speak_answer", methods=["POST"])
-def speak_answer():
-    json_content = request.json
-    answer = json_content.get("answer")
-    #res_id = json_content.get("res_id")
-
-    cleaned_answer = BotUtils.clean_text(answer)
-    # สร้างไฟล์เสียงใหม่หรือเขียนทับไฟล์เสียงเดิม
-    tts = gTTS(text=cleaned_answer, lang='th')
-    audio_file_path = "static/response.mp3"  # ใช้ชื่อไฟล์เดียวกัน
-    tts.save(audio_file_path)
-    
-    # ส่ง URL กลับไป
-    return {"audio_url": "/static/response.mp3"}
 
 def start_app():
     # app.run(host="0.0.0.0", port=8080, debug=True)
-    app.run(host="0.0.0.0", debug=False)
+    app.run(port=7001,debug=False)
 
 
 if __name__ == "__main__":
     start_app()
+
+
+
+
+
+
+# @app.route("/speak_answer", methods=["POST"])
+# def speak_answer():
+#     json_content = request.json
+#     answer = json_content.get("answer")
+#     #res_id = json_content.get("res_id")
+
+#     cleaned_answer = BotUtils.clean_text(answer)
+#     # สร้างไฟล์เสียงใหม่หรือเขียนทับไฟล์เสียงเดิม
+#     tts = gTTS(text=cleaned_answer, lang='th')
+#     audio_file_path = "static/response.mp3"  # ใช้ชื่อไฟล์เดียวกัน
+#     tts.save(audio_file_path)
+    
+#     # ส่ง URL กลับไป
+#     return {"audio_url": "/static/response.mp3"}

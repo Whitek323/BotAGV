@@ -1,11 +1,11 @@
 import torch
-import torch.nn as nn
 import random
 import json
 import re
 import numpy as np
 from pythainlp import word_tokenize
 from neural_net import NeuralNet
+
 class BotUtils :
     def load_model(model_path, intent_path):
        data = torch.load(model_path, map_location=torch.device("cpu"))
