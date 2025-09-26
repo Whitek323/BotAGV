@@ -23,7 +23,7 @@ mainForm?.addEventListener('submit', async (e) => {
 micBtn?.addEventListener('click', async () => {
   const original = micBtn.textContent;
   micBtn.disabled = true;
-  micBtn.textContent = '...';
+  // micBtn.textContent = '...';
   body.style.backgroundImage = 'url("static/bg2.png")';
   textResponse.textContent = '';
   audioContainer.innerHTML = '';
@@ -68,7 +68,7 @@ micBtn?.addEventListener('click', async () => {
     textResponse.textContent = String(err);
   } finally {
     body.style.backgroundImage = 'url("static/bg1.png")';
-    micBtn.textContent = original;
+    // micBtn.textContent = original;
     micBtn.disabled = false;
   }
 });
