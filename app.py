@@ -1,5 +1,5 @@
 import csv
-from flask import Flask,request,render_template,jsonify
+from flask import Flask, Response, json,request,render_template,jsonify
 from bot_utils import BotUtils
 import io
 from pydub import AudioSegment
@@ -69,15 +69,29 @@ def aiPost():
     if not sentence:
         return jsonify({"error": "missing 'sentence'"}), 400
     tag, prob = BotUtils.predict_intent(model, sentence, all_words, tags)
-    
     if prob >= 0.95:
         response, res_id = BotUtils.get_response(tag, intents)
-        return jsonify({"response": response, "res_id": int(res_id)})
+        return Response(
+            json.dumps({"response": response, "res_id": int(res_id)}, ensure_ascii=False),
+            content_type="application/json; charset=utf-8"
+        )
     else:
         with open("logs/unknown_questions.csv", "a", newline='', encoding="utf-8") as f:
             writer = csv.writer(f)
-            writer.writerow(sentence)
-        return jsonify({"response": "ขออภัย ฉันยังไม่เข้าใจคำถามนี้", "res_id": -1})
+            # sentence ต้องเป็น list ไม่ใช่ str เดี่ยว
+            writer.writerow([sentence])  
+        return Response(
+            json.dumps({"response": "ขออภัย ฉันยังไม่เข้าใจคำถามนี้", "res_id": -1}, ensure_ascii=False),
+            content_type="application/json; charset=utf-8"
+        )
+    # if prob >= 0.95:
+    #     response, res_id = BotUtils.get_response(tag, intents)
+    #     return jsonify({"response": response, "res_id": int(res_id)})
+    # else:
+    #     with open("logs/unknown_questions.csv", "a", newline='', encoding="utf-8") as f:
+    #         writer = csv.writer(f)
+    #         writer.writerow(sentence)
+    #     return jsonify({"response": "ขออภัย ฉันยังไม่เข้าใจคำถามนี้", "res_id": -1})
 
 def start_app():
     # app.run(host="0.0.0.0", port=8080, debug=True)

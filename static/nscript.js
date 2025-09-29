@@ -13,7 +13,7 @@ let audioContainer = $('audioContainer');
 if (!audioContainer) {
   audioContainer = document.createElement('div');
   audioContainer.id = 'audioContainer';
-  // (textResponse || document.body).insertAdjacentElement('afterend', audioContainer);
+  (textResponse || document.body).insertAdjacentElement('afterend', audioContainer);
 }
 
 mainForm?.addEventListener('submit', async (e) => {
@@ -26,7 +26,7 @@ micBtn?.addEventListener('click', async () => {
   micBtn.disabled = true;
   // micBtn.textContent = '...';
   body.style.backgroundImage = 'url("static/bg2.png")';
-  // textResponse.textContent = '';
+  textResponse.textContent = '';
   audioContainer.innerHTML = '';
 
   let stream, recorder;

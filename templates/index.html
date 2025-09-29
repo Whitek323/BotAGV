@@ -11,7 +11,8 @@
 		<div style="height:300px"></div>
 		<div class="content-center flex justify-center w-full">
 <form id="mainForm" >
-  <input class="shadow appearance-none border rounded-lg w-3xl py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline" id="textInput" placeholder="สวัสดี" value="สวัสดี">
+  <textarea class="shadow appearance-none border rounded-lg w-3xl py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline" id="textInput" placeholder="สวัสดี" value="สวัสดี"></textarea>
+  
  	<div class="flex justify-between mt-2"> 
 		<label>
 			<div id="checkAria" class="py-3">
@@ -22,16 +23,15 @@
 		</label>
 		<div class="">
 			<!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button> -->
-			<button type="submit" class="p-0 border-0 bg-transparent">
+			<button type="submit" class="bg-gray-500 rounded-md p-1 border-0">
 				<img src="{{ url_for('static', filename='../static/send.png') }}" alt="Submit" class="w-8 h-8">
 			</button>
-			<button class="p-0 border-0 bg-transparent" type="button" id="micBtn" aria-label="Record with mic">
+			<button class="border-0 bg-gray-500 rounded-md p-1" type="button" id="micBtn" aria-label="Record with mic">
 				<img src="{{ url_for('static', filename='../static/microphone.png') }}" alt="Mic" class="w-8 h-8">
 			</button>
 		</div>
 	</div>
 <div class="flex flex-col items-center justify-center">
-  <p id="textResponse" style="min-height:40px" class="shadow appearance-none border rounded-lg w-3xl py-2 px-3 text-gray-100 leading-tight focus:outline-none focus:shadow-outline"></p>
   <div style="display:none" id="audioContainer"></div>
 </div>
 

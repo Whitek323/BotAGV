@@ -23,8 +23,6 @@ class ChatDataset(Dataset):
         return self.n_samples
 
 if __name__ == "__main__":
-    MODEL_OUTPUT_PATH = "data/model/new/data.pth"
-
     import numpy as np
     def bag_of_words(tokenized_sentence, all_words):
         """
