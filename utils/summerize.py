@@ -3,7 +3,7 @@ import csv
 from collections import Counter
 
 INTENTS_FILE = "../data/intents/intents.json"
-TEST_FILE = "../logs/test_patterns.csv"
+TEST_FILE = "../logs/test_results.csv"
 OUT_FILE_SUMMARY = "../logs/eval_result.json"
 OUT_FILE_PATTERN = "../logs/response_pattern.json"
 
@@ -22,7 +22,7 @@ with open(TEST_FILE, "r", encoding="utf-8") as f:
     for row in reader:
         results.append({
             "tag": row["tag"],
-            "res_id": str(row["res_id"]),
+            "res_id": row["res_id"],
             "response": row["response"]
         })
 
