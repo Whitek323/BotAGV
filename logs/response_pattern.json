@@ -9,13 +9,8 @@
             },
             {
                 "respon_id": "-1",
-                "frequency": 7,
-                "accuracy": 0.7
-            },
-            {
-                "respon_id": "85",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 8,
+                "accuracy": 0.8
             }
         ]
     },
@@ -23,49 +18,49 @@
         "accuracy": 1.0,
         "details": [
             {
-                "respon_id": "72",
+                "respon_id": "73",
+                "frequency": 2,
+                "accuracy": 0.2
+            },
+            {
+                "respon_id": "74",
                 "frequency": 5,
                 "accuracy": 0.5
             },
             {
-                "respon_id": "73",
-                "frequency": 4,
-                "accuracy": 0.4
-            },
-            {
-                "respon_id": "74",
-                "frequency": 1,
-                "accuracy": 0.1
-            }
-        ]
-    },
-    "กิจกรรม": {
-        "accuracy": 0.7,
-        "details": [
-            {
-                "respon_id": "35",
-                "frequency": 7,
-                "accuracy": 0.7
-            },
-            {
-                "respon_id": "-1",
+                "respon_id": "72",
                 "frequency": 3,
                 "accuracy": 0.3
             }
         ]
     },
-    "ขอบคุณ": {
-        "accuracy": 0.8,
+    "กิจกรรม": {
+        "accuracy": 0.6,
         "details": [
             {
-                "respon_id": "2",
-                "frequency": 8,
-                "accuracy": 0.8
+                "respon_id": "35",
+                "frequency": 6,
+                "accuracy": 0.6
             },
             {
                 "respon_id": "-1",
-                "frequency": 2,
-                "accuracy": 0.2
+                "frequency": 4,
+                "accuracy": 0.4
+            }
+        ]
+    },
+    "ขอบคุณ": {
+        "accuracy": 0.6,
+        "details": [
+            {
+                "respon_id": "2",
+                "frequency": 6,
+                "accuracy": 0.6
+            },
+            {
+                "respon_id": "-1",
+                "frequency": 4,
+                "accuracy": 0.4
             }
         ]
     },
@@ -89,11 +84,16 @@
             },
             {
                 "respon_id": "-1",
-                "frequency": 6,
-                "accuracy": 0.6
+                "frequency": 5,
+                "accuracy": 0.5
             },
             {
                 "respon_id": "8",
+                "frequency": 1,
+                "accuracy": 0.1
+            },
+            {
+                "respon_id": "22",
                 "frequency": 1,
                 "accuracy": 0.1
             }
@@ -103,7 +103,7 @@
         "accuracy": 0.2,
         "details": [
             {
-                "respon_id": "9",
+                "respon_id": "8",
                 "frequency": 2,
                 "accuracy": 0.2
             },
@@ -130,32 +130,32 @@
         ]
     },
     "ค่าเทอม": {
-        "accuracy": 0.7,
+        "accuracy": 0.5,
         "details": [
             {
                 "respon_id": "27",
-                "frequency": 7,
-                "accuracy": 0.7
+                "frequency": 5,
+                "accuracy": 0.5
             },
             {
                 "respon_id": "-1",
-                "frequency": 3,
-                "accuracy": 0.3
+                "frequency": 5,
+                "accuracy": 0.5
             }
         ]
     },
     "ฉันเป็นใคร": {
-        "accuracy": 0.7,
+        "accuracy": 0.9,
         "details": [
             {
                 "respon_id": "22",
-                "frequency": 7,
-                "accuracy": 0.7
+                "frequency": 9,
+                "accuracy": 0.9
             },
             {
                 "respon_id": "-1",
-                "frequency": 3,
-                "accuracy": 0.3
+                "frequency": 1,
+                "accuracy": 0.1
             }
         ]
     },
@@ -169,33 +169,38 @@
             },
             {
                 "respon_id": "-1",
-                "frequency": 3,
-                "accuracy": 0.3
+                "frequency": 4,
+                "accuracy": 0.4
             },
             {
                 "respon_id": "22",
-                "frequency": 2,
-                "accuracy": 0.2
+                "frequency": 1,
+                "accuracy": 0.1
             }
         ]
     },
     "ติดต่องานนักศึกษา": {
-        "accuracy": 1.0,
+        "accuracy": 0.9,
         "details": [
             {
                 "respon_id": "94",
-                "frequency": 10,
-                "accuracy": 1.0
+                "frequency": 9,
+                "accuracy": 0.9
+            },
+            {
+                "respon_id": "-1",
+                "frequency": 1,
+                "accuracy": 0.1
             }
         ]
     },
     "ตึกวิทยาศาสตร์": {
-        "accuracy": 0.6,
+        "accuracy": 0.4,
         "details": [
             {
                 "respon_id": "-1",
-                "frequency": 4,
-                "accuracy": 0.4
+                "frequency": 6,
+                "accuracy": 0.6
             },
             {
                 "respon_id": "29",
@@ -204,8 +209,8 @@
             },
             {
                 "respon_id": "30",
-                "frequency": 3,
-                "accuracy": 0.3
+                "frequency": 1,
+                "accuracy": 0.1
             }
         ]
     },
@@ -244,18 +249,18 @@
         "details": [
             {
                 "respon_id": "71",
-                "frequency": 4,
-                "accuracy": 0.4
+                "frequency": 2,
+                "accuracy": 0.2
             },
             {
                 "respon_id": "70",
-                "frequency": 5,
-                "accuracy": 0.5
+                "frequency": 3,
+                "accuracy": 0.3
             },
             {
                 "respon_id": "69",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 5,
+                "accuracy": 0.5
             }
         ]
     },
@@ -263,14 +268,14 @@
         "accuracy": 1.0,
         "details": [
             {
-                "respon_id": "14",
-                "frequency": 9,
-                "accuracy": 0.9
+                "respon_id": "13",
+                "frequency": 8,
+                "accuracy": 0.8
             },
             {
-                "respon_id": "13",
-                "frequency": 1,
-                "accuracy": 0.1
+                "respon_id": "14",
+                "frequency": 2,
+                "accuracy": 0.2
             }
         ]
     },
@@ -288,14 +293,14 @@
         "accuracy": 0.9,
         "details": [
             {
-                "respon_id": "11",
-                "frequency": 4,
-                "accuracy": 0.4
-            },
-            {
                 "respon_id": "12",
                 "frequency": 5,
                 "accuracy": 0.5
+            },
+            {
+                "respon_id": "11",
+                "frequency": 4,
+                "accuracy": 0.4
             },
             {
                 "respon_id": "-1",
@@ -305,7 +310,7 @@
         ]
     },
     "ร้านอาหาร": {
-        "accuracy": 0.8,
+        "accuracy": 0.0,
         "details": [
             {
                 "respon_id": "-1",
@@ -313,9 +318,9 @@
                 "accuracy": 0.2
             },
             {
-                "respon_id": "66",
-                "frequency": 3,
-                "accuracy": 0.3
+                "respon_id": "65",
+                "frequency": 1,
+                "accuracy": 0.1
             },
             {
                 "respon_id": "64",
@@ -323,24 +328,24 @@
                 "accuracy": 0.4
             },
             {
-                "respon_id": "65",
-                "frequency": 1,
-                "accuracy": 0.1
+                "respon_id": "66",
+                "frequency": 3,
+                "accuracy": 0.3
             }
         ]
     },
     "ลงทะเบียน": {
-        "accuracy": 0.6,
+        "accuracy": 0.5,
         "details": [
             {
-                "respon_id": "78",
-                "frequency": 2,
-                "accuracy": 0.2
+                "respon_id": "-1",
+                "frequency": 5,
+                "accuracy": 0.5
             },
             {
-                "respon_id": "-1",
-                "frequency": 4,
-                "accuracy": 0.4
+                "respon_id": "78",
+                "frequency": 1,
+                "accuracy": 0.1
             },
             {
                 "respon_id": "77",
@@ -350,17 +355,17 @@
         ]
     },
     "ลงทะเบียนล่าช้า": {
-        "accuracy": 0.9,
+        "accuracy": 0.6,
         "details": [
             {
                 "respon_id": "-1",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 4,
+                "accuracy": 0.4
             },
             {
                 "respon_id": "98",
-                "frequency": 9,
-                "accuracy": 0.9
+                "frequency": 6,
+                "accuracy": 0.6
             }
         ]
     },
@@ -375,17 +380,17 @@
         ]
     },
     "ลาก่อน": {
-        "accuracy": 0.9,
+        "accuracy": 0.8,
         "details": [
             {
                 "respon_id": "-1",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 2,
+                "accuracy": 0.2
             },
             {
                 "respon_id": "5",
-                "frequency": 7,
-                "accuracy": 0.7
+                "frequency": 6,
+                "accuracy": 0.6
             },
             {
                 "respon_id": "4",
@@ -419,13 +424,8 @@
         "details": [
             {
                 "respon_id": "-1",
-                "frequency": 8,
-                "accuracy": 0.8
-            },
-            {
-                "respon_id": "84",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 9,
+                "accuracy": 0.9
             },
             {
                 "respon_id": "85",
@@ -438,39 +438,29 @@
         "accuracy": 0.0,
         "details": [
             {
-                "respon_id": "38",
-                "frequency": 1,
-                "accuracy": 0.1
-            },
-            {
                 "respon_id": "-1",
-                "frequency": 7,
-                "accuracy": 0.7
-            },
-            {
-                "respon_id": "90",
-                "frequency": 1,
-                "accuracy": 0.1
-            },
-            {
-                "respon_id": "37",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 10,
+                "accuracy": 1.0
             }
         ]
     },
     "วิศวกรรมหล่อโลหะ": {
-        "accuracy": 1.0,
+        "accuracy": 0.9,
         "details": [
             {
                 "respon_id": "33",
-                "frequency": 8,
-                "accuracy": 0.8
+                "frequency": 6,
+                "accuracy": 0.6
             },
             {
                 "respon_id": "34",
-                "frequency": 2,
-                "accuracy": 0.2
+                "frequency": 3,
+                "accuracy": 0.3
+            },
+            {
+                "respon_id": "-1",
+                "frequency": 1,
+                "accuracy": 0.1
             }
         ]
     },
@@ -494,41 +484,21 @@
         "details": [
             {
                 "respon_id": "-1",
-                "frequency": 9,
-                "accuracy": 0.9
-            },
-            {
-                "respon_id": "90",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 10,
+                "accuracy": 1.0
             }
         ]
     },
     "วิศวกรรมเมคคาทรอนิกส์": {
-        "accuracy": 0.6,
+        "accuracy": 0.1,
         "details": [
             {
-                "respon_id": "51",
-                "frequency": 3,
-                "accuracy": 0.3
-            },
-            {
                 "respon_id": "-1",
-                "frequency": 3,
-                "accuracy": 0.3
-            },
-            {
-                "respon_id": "50",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 9,
+                "accuracy": 0.9
             },
             {
                 "respon_id": "49",
-                "frequency": 2,
-                "accuracy": 0.2
-            },
-            {
-                "respon_id": "90",
                 "frequency": 1,
                 "accuracy": 0.1
             }
@@ -539,13 +509,8 @@
         "details": [
             {
                 "respon_id": "-1",
-                "frequency": 9,
-                "accuracy": 0.9
-            },
-            {
-                "respon_id": "8",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 10,
+                "accuracy": 1.0
             }
         ]
     },
@@ -560,52 +525,27 @@
         ]
     },
     "สนามบาส": {
-        "accuracy": 0.4,
+        "accuracy": 0.1,
         "details": [
             {
-                "respon_id": "60",
-                "frequency": 3,
-                "accuracy": 0.3
-            },
-            {
-                "respon_id": "59",
-                "frequency": 1,
-                "accuracy": 0.1
-            },
-            {
-                "respon_id": "67",
-                "frequency": 1,
-                "accuracy": 0.1
-            },
-            {
                 "respon_id": "-1",
-                "frequency": 5,
-                "accuracy": 0.5
+                "frequency": 9,
+                "accuracy": 0.9
+            },
+            {
+                "respon_id": "60",
+                "frequency": 1,
+                "accuracy": 0.1
             }
         ]
     },
     "สนามฟุตบอล": {
-        "accuracy": 0.2,
+        "accuracy": 0.1,
         "details": [
             {
                 "respon_id": "-1",
-                "frequency": 6,
-                "accuracy": 0.6
-            },
-            {
-                "respon_id": "57",
-                "frequency": 1,
-                "accuracy": 0.1
-            },
-            {
-                "respon_id": "67",
-                "frequency": 1,
-                "accuracy": 0.1
-            },
-            {
-                "respon_id": "68",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 9,
+                "accuracy": 0.9
             },
             {
                 "respon_id": "55",
@@ -615,27 +555,32 @@
         ]
     },
     "สบายดีมั้ย": {
-        "accuracy": 0.6,
+        "accuracy": 0.4,
         "details": [
             {
-                "respon_id": "6",
+                "respon_id": "-1",
                 "frequency": 6,
                 "accuracy": 0.6
             },
             {
-                "respon_id": "-1",
+                "respon_id": "6",
                 "frequency": 4,
                 "accuracy": 0.4
             }
         ]
     },
     "สมัครที่นี่เลยได้มั้ย": {
-        "accuracy": 1.0,
+        "accuracy": 0.8,
         "details": [
             {
                 "respon_id": "91",
-                "frequency": 10,
-                "accuracy": 1.0
+                "frequency": 8,
+                "accuracy": 0.8
+            },
+            {
+                "respon_id": "-1",
+                "frequency": 2,
+                "accuracy": 0.2
             }
         ]
     },
@@ -660,37 +605,37 @@
         ]
     },
     "สาขาอื่น": {
-        "accuracy": 0.6,
+        "accuracy": 0.5,
         "details": [
             {
                 "respon_id": "92",
-                "frequency": 6,
-                "accuracy": 0.6
-            },
-            {
-                "respon_id": "90",
-                "frequency": 2,
-                "accuracy": 0.2
+                "frequency": 5,
+                "accuracy": 0.5
             },
             {
                 "respon_id": "-1",
-                "frequency": 2,
-                "accuracy": 0.2
+                "frequency": 4,
+                "accuracy": 0.4
+            },
+            {
+                "respon_id": "90",
+                "frequency": 1,
+                "accuracy": 0.1
             }
         ]
     },
     "หิวข้าว": {
-        "accuracy": 0.5,
+        "accuracy": 0.3,
         "details": [
             {
                 "respon_id": "-1",
-                "frequency": 5,
-                "accuracy": 0.5
+                "frequency": 7,
+                "accuracy": 0.7
             },
             {
                 "respon_id": "16",
-                "frequency": 5,
-                "accuracy": 0.5
+                "frequency": 3,
+                "accuracy": 0.3
             }
         ]
     },
@@ -699,8 +644,8 @@
         "details": [
             {
                 "respon_id": "-1",
-                "frequency": 4,
-                "accuracy": 0.4
+                "frequency": 5,
+                "accuracy": 0.5
             },
             {
                 "respon_id": "7",
@@ -713,11 +658,6 @@
                 "accuracy": 0.1
             },
             {
-                "respon_id": "22",
-                "frequency": 1,
-                "accuracy": 0.1
-            },
-            {
                 "respon_id": "1",
                 "frequency": 1,
                 "accuracy": 0.1
@@ -725,25 +665,15 @@
         ]
     },
     "ห้องธุรการ": {
-        "accuracy": 0.4,
+        "accuracy": 0.0,
         "details": [
             {
-                "respon_id": "36",
-                "frequency": 4,
-                "accuracy": 0.4
-            },
-            {
                 "respon_id": "-1",
-                "frequency": 4,
-                "accuracy": 0.4
+                "frequency": 9,
+                "accuracy": 0.9
             },
             {
-                "respon_id": "15",
-                "frequency": 1,
-                "accuracy": 0.1
-            },
-            {
-                "respon_id": "9",
+                "respon_id": "8",
                 "frequency": 1,
                 "accuracy": 0.1
             }
@@ -770,12 +700,17 @@
         ]
     },
     "ห้องประชุมเจ้าพระยา1": {
-        "accuracy": 1.0,
+        "accuracy": 0.9,
         "details": [
             {
                 "respon_id": "96",
-                "frequency": 10,
-                "accuracy": 1.0
+                "frequency": 9,
+                "accuracy": 0.9
+            },
+            {
+                "respon_id": "-1",
+                "frequency": 1,
+                "accuracy": 0.1
             }
         ]
     },
@@ -790,27 +725,27 @@
         ]
     },
     "อาคาร36": {
-        "accuracy": 0.5,
+        "accuracy": 0.2,
         "details": [
             {
-                "respon_id": "63",
-                "frequency": 2,
-                "accuracy": 0.2
-            },
-            {
-                "respon_id": "62",
-                "frequency": 3,
-                "accuracy": 0.3
-            },
-            {
                 "respon_id": "-1",
-                "frequency": 5,
-                "accuracy": 0.5
+                "frequency": 8,
+                "accuracy": 0.8
+            },
+            {
+                "respon_id": "61",
+                "frequency": 1,
+                "accuracy": 0.1
+            },
+            {
+                "respon_id": "63",
+                "frequency": 1,
+                "accuracy": 0.1
             }
         ]
     },
     "อายุ": {
-        "accuracy": 0.4,
+        "accuracy": 0.2,
         "details": [
             {
                 "respon_id": "25",
@@ -819,38 +754,23 @@
             },
             {
                 "respon_id": "-1",
-                "frequency": 6,
-                "accuracy": 0.6
-            },
-            {
-                "respon_id": "26",
-                "frequency": 2,
-                "accuracy": 0.2
+                "frequency": 8,
+                "accuracy": 0.8
             }
         ]
     },
     "อาหารร้อนๆ": {
-        "accuracy": 0.6,
+        "accuracy": 0.5,
         "details": [
             {
                 "respon_id": "17",
-                "frequency": 6,
-                "accuracy": 0.6
-            },
-            {
-                "respon_id": "12",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 5,
+                "accuracy": 0.5
             },
             {
                 "respon_id": "-1",
-                "frequency": 2,
-                "accuracy": 0.2
-            },
-            {
-                "respon_id": "11",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 5,
+                "accuracy": 0.5
             }
         ]
     },
@@ -865,37 +785,37 @@
         ]
     },
     "เครื่องกล": {
-        "accuracy": 0.7,
+        "accuracy": 0.5,
         "details": [
             {
-                "respon_id": "31",
-                "frequency": 4,
-                "accuracy": 0.4
+                "respon_id": "32",
+                "frequency": 2,
+                "accuracy": 0.2
             },
             {
                 "respon_id": "-1",
-                "frequency": 3,
-                "accuracy": 0.3
+                "frequency": 5,
+                "accuracy": 0.5
             },
             {
-                "respon_id": "32",
+                "respon_id": "31",
                 "frequency": 3,
                 "accuracy": 0.3
             }
         ]
     },
     "เบอร์คณะ": {
-        "accuracy": 0.9,
+        "accuracy": 0.7,
         "details": [
             {
                 "respon_id": "93",
-                "frequency": 9,
-                "accuracy": 0.9
+                "frequency": 7,
+                "accuracy": 0.7
             },
             {
                 "respon_id": "-1",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 3,
+                "accuracy": 0.3
             }
         ]
     },
@@ -974,13 +894,8 @@
             },
             {
                 "respon_id": "-1",
-                "frequency": 4,
-                "accuracy": 0.4
-            },
-            {
-                "respon_id": "88",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 5,
+                "accuracy": 0.5
             }
         ]
     },
@@ -995,22 +910,17 @@
         ]
     },
     "เหงา": {
-        "accuracy": 0.5,
+        "accuracy": 0.4,
         "details": [
             {
                 "respon_id": "-1",
-                "frequency": 5,
-                "accuracy": 0.5
-            },
-            {
-                "respon_id": "20",
-                "frequency": 4,
-                "accuracy": 0.4
+                "frequency": 6,
+                "accuracy": 0.6
             },
             {
                 "respon_id": "19",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 4,
+                "accuracy": 0.4
             }
         ]
     },
@@ -1045,17 +955,17 @@
         ]
     },
     "โอนจ่าย": {
-        "accuracy": 0.9,
+        "accuracy": 0.7,
         "details": [
             {
                 "respon_id": "-1",
-                "frequency": 1,
-                "accuracy": 0.1
+                "frequency": 3,
+                "accuracy": 0.3
             },
             {
                 "respon_id": "89",
-                "frequency": 9,
-                "accuracy": 0.9
+                "frequency": 7,
+                "accuracy": 0.7
             }
         ]
     }
